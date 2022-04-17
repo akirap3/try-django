@@ -1,17 +1,7 @@
 {% extends 'base.html' %} {% block content %} {% if not created %}
 <div style="margin-top: 10px">
   <form action="/articles/create" method="POST">
-    {% csrf_token %}
-    <div><input type="text" name="title" id="" placeholder="Title" /></div>
-    <div style="margin-top: 10px">
-      <textarea
-        name="content"
-        id=""
-        cols="30"
-        rows="10"
-        placeholder="Content"
-      ></textarea>
-    </div>
+    {% csrf_token %} {{form.as_p}}
     <div style="margin-top: 10px">
       <input type="submit" value="Create article" />
     </div>
